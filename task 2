@@ -1,0 +1,35 @@
+const printOddNumbersArrow = (array) => array.filter((number) => number % 2 === 1);
+
+const convertStringsToTitleCapsArrow = (array) => array.map((string) => string.toUpperCase());
+
+const sumOfAllNumbersArrow = (array) => array.reduce((sum, number) => sum + number);
+
+const returnAllPrimeNumbersArrow = (array) => array.filter((number) => isPrimeArrow(number));
+
+const returnAllPalindromesArrow = (array) => array.filter((number) => isPalindromeArrow(number));
+
+const isPrimeArrow = (number) => {
+  if (number <= 1) {
+    return false;
+  }
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+};
+
+const isPalindromeArrow = (number) => {
+  const numberStr = String(number);
+  const reversedNumberStr = numberStr.split("").reverse().join("");
+  return numberStr === reversedNumberStr;
+};
+
+const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log(printOddNumbersArrow(array));
+console.log(convertStringsToTitleCapsArrow(["hello", "world", "python"]));
+console.log(sumOfAllNumbersArrow(array));
+console.log(returnAllPrimeNumbersArrow(array));
+console.log(returnAllPalindromesArrow(array));
